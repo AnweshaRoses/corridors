@@ -4,4 +4,25 @@
     justify-content: center;
     height: 20%;
     font-weight: bold;
+    margin-top: 30px;
 }
+.headingContainer{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 2%;
+margin-left: 3%;
+}
+.classified{
+
+    color: rgb(80, 197, 236);
+    margin-top: 2%;
+    margin-left: 3%;
+
+}
+.content{
+    color: black;
+    font-weight: normal;
+    margin-left: 5% ;
+}
+

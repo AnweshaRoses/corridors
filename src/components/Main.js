@@ -10,14 +10,7 @@ import Chart from "./Chart";
 
 import { v4 as uuid } from "uuid";
 
-
-
-
-
-
-
-
-
+import { useNavigate } from "react-router-dom";
 
 const ml5 = window.ml5;
 
@@ -32,7 +25,10 @@ const getLocalStorage = () => {
   }
 };
 
+
+
 const Main = (props) => {
+
     const unique_id = uuid();
     const small_id = unique_id.slice(0, 3);
     const [name, setName] = useState("");
@@ -43,6 +39,7 @@ const Main = (props) => {
     let [text, setText] = useState(0);
     let [score, setScore] = useState(0);
     let [modelIsReady, setModelIsReady] = useState(false);
+    const navigate=useNavigate();
   
   
     const handleChange = (e) => {
@@ -101,6 +98,9 @@ const Main = (props) => {
     const removeItem = (id) => {
       setList(list.filter((item) => item.id !== id));
     };
+    const changes=()=>{
+        navigate('/document')
+    }
   
     const editItem = (id) => {
       const specificItem = list.find((item) => item.id === id);
@@ -174,6 +174,13 @@ const Main = (props) => {
                   class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
                 >
                   Clear List
+                </button>
+                <button
+                  type="button"
+                  onClick={changes}
+                  class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+                >
+                  Generate PDF
                 </button>
 
 
